@@ -10,6 +10,25 @@
 1. pieces (players pieces), there are two players `O` (circle) and `X` (cross): i.e. `[{row: 0, col: 0, label: 'O'}, {row: 0, col: 1, label: 'X'}), {row: 0, col: 2, label: 'O')}, ...]`
 1. winning-pieces (players winning pieces)
 
+# Coding Sample
+```jsx
+export const Game = () => {
+  const game: Partial<UseGame> = useGameSetting();
+
+  return (
+    <GameProvider game={game}>
+      <GameBoard>
+        <GameCells />
+        <GamePieces label="O" />
+        <GamePieces label="X" />
+        <GameToast />
+      </GameBoard>
+    </GameProvider>
+  );
+};
+```
+
 # Screenshots
+
 ![example](./docs/example.png)
 ![winner](./docs/winner.png)
